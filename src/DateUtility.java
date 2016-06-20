@@ -155,9 +155,9 @@ public class DateUtility {
 		  Calendar cal1 = new GregorianCalendar();
 		  Calendar cal2 = new GregorianCalendar();
 		  cal1.clear();
-		  cal1.set(year1, month1, day1); 
+		  cal1.set(year1, month1-1, day1); 
 		  cal2.clear();
-		  cal2.set(year2, month2, day2);
+		  cal2.set(year2, month2-1, day2);
 		int days=0;
 		
 	    days=daysBetween(cal1.getTime(),cal2.getTime());	
@@ -174,10 +174,9 @@ public class DateUtility {
 		int dayofWeek=0;
 		
 		Calendar datee = new GregorianCalendar();
-		datee.clear();
-		datee.set(year, month, day);
+		datee.set(year, month-1, day);
 		
-		dayofWeek=datee.get(Calendar.DAY_OF_WEEK_IN_MONTH);
+		dayofWeek=datee.get(Calendar.DAY_OF_WEEK)-1;
 		 
 		return dayofWeek;
 		
@@ -185,11 +184,11 @@ public class DateUtility {
 	public int caldaysBetweentwodays(String date1, String date2)
 	{
 		Scanner sc1=new Scanner(date1);
-		int month1=sc1.nextInt();
+		int month1=sc1.nextInt()-1;
 		int day1=sc1.nextInt();
 		int year1=sc1.nextInt();
 		Scanner sc2=new Scanner(date2);
-		int month2=sc2.nextInt();
+		int month2=sc2.nextInt()-1;
 		int day2=sc2.nextInt();
 		int year2=sc2.nextInt();
 		
@@ -210,7 +209,7 @@ public class DateUtility {
 	public int getDayofWeek(String date)
 	{
 		Scanner sc1=new Scanner(date);
-		int month=sc1.nextInt();
+		int month=sc1.nextInt()-1;
 		int day=sc1.nextInt();
 		int year=sc1.nextInt();
 		
@@ -220,7 +219,7 @@ public class DateUtility {
 		datee.clear();
 		datee.set(year, month, day);
 		
-		dayofWeek=datee.get(Calendar.DAY_OF_WEEK_IN_MONTH);
+		dayofWeek=datee.get(Calendar.DAY_OF_WEEK)-1;
 		 
 		return dayofWeek;
 		
@@ -228,7 +227,7 @@ public class DateUtility {
 	public int caldaysBetweentwodays(String date1)
 	{
 		Scanner sc1=new Scanner(date1);
-		int month1=sc1.nextInt();
+		int month1=sc1.nextInt()-1;
 		int day1=sc1.nextInt();
 		int year1=sc1.nextInt();
 		
