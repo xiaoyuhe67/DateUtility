@@ -184,10 +184,12 @@ public class DateUtility {
 	public int caldaysBetweentwodays(String date1, String date2)
 	{
 		Scanner sc1=new Scanner(date1);
+		sc1.useDelimiter("/");
 		int month1=sc1.nextInt()-1;
 		int day1=sc1.nextInt();
 		int year1=sc1.nextInt();
 		Scanner sc2=new Scanner(date2);
+		sc2.useDelimiter("/");
 		int month2=sc2.nextInt()-1;
 		int day2=sc2.nextInt();
 		int year2=sc2.nextInt();
@@ -209,6 +211,7 @@ public class DateUtility {
 	public int getDayofWeek(String date)
 	{
 		Scanner sc1=new Scanner(date);
+		sc1.useDelimiter("/");
 		int month=sc1.nextInt()-1;
 		int day=sc1.nextInt();
 		int year=sc1.nextInt();
@@ -227,6 +230,7 @@ public class DateUtility {
 	public int caldaysBetweentwodays(String date1)
 	{
 		Scanner sc1=new Scanner(date1);
+		sc1.useDelimiter("/");
 		int month1=sc1.nextInt()-1;
 		int day1=sc1.nextInt();
 		int year1=sc1.nextInt();
