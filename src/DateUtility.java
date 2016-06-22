@@ -1,18 +1,16 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+
 
 public class DateUtility {
 	
-	private int month;
-	private int day;
-	private int year;
-	private String delimiter="/";
+	private static int month=6;
+	private static int day=7;
+	private static int year=2015;
+	private static String delimiter="/";
 		
 	public static int getDaysInMonth(int month,int year)
 	{
@@ -59,7 +57,7 @@ public class DateUtility {
 	@Override
 	public String toString()
 	{
-		return String.format("%02d", this.month)+this.delimiter+String.format("%02d", this.day)+this.delimiter+this.year;
+		return String.format("%02d", DateUtility.month)+DateUtility.delimiter+String.format("%02d", DateUtility.day)+DateUtility.delimiter+DateUtility.year;
 	}
 	
 	public static boolean isLeapYear(int year)
@@ -150,7 +148,7 @@ public class DateUtility {
 	}
 
 	
-	public int caldaysBetweentwodays(int month1, int day1, int year1, int month2, int day2, int year2)
+	public static int caldaysBetweentwodays(int month1, int day1, int year1, int month2, int day2, int year2)
 	{
 		  Calendar cal1 = new GregorianCalendar();
 		  Calendar cal2 = new GregorianCalendar();
@@ -166,10 +164,10 @@ public class DateUtility {
 		return days;
 	}
 	
-	public int daysBetween(Date d1, Date d2){
+	public static int daysBetween(Date d1, Date d2){
         return (int)( (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
 }
-	public int getDayofWeek(int month, int day,int year)
+	public static int getDayofWeek(int month, int day,int year)
 	{
 		int dayofWeek=0;
 		
@@ -181,7 +179,7 @@ public class DateUtility {
 		return dayofWeek;
 		
 	}
-	public int caldaysBetweentwodays(String date1, String date2)
+	public static int caldaysBetweentwodays(String date1, String date2)
 	{
 		Scanner sc1=new Scanner(date1);
 		sc1.useDelimiter("/");
@@ -208,7 +206,7 @@ public class DateUtility {
 		return days;
 	}
 	
-	public int getDayofWeek(String date)
+	public static int getDayofWeek(String date)
 	{
 		Scanner sc1=new Scanner(date);
 		sc1.useDelimiter("/");
@@ -227,7 +225,7 @@ public class DateUtility {
 		return dayofWeek;
 		
 	}
-	public int caldaysBetweentwodays(String date1)
+	public static int caldaysBetweentwodays(String date1)
 	{
 		Scanner sc1=new Scanner(date1);
 		sc1.useDelimiter("/");
